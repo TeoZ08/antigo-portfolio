@@ -9,14 +9,16 @@ html{
     scroll-behavior: smooth;
 }
 
-:root{
-    --primaria: #4f46e5;
-    --secundaria: #7c3aed;
-    --escuro: #0f172a;
-    --maisescuro: #0a0f1c;
-    --claro: #e2e8f0;
-    --vidro: rgba(255, 255, 255, 0.1);    
+:root {
+    --primaria: #151515;
+    --secundaria: #ffde22;
+    --escuro: #151515;
+    --maisescuro: #0a0a0a;
+    --claro: #fff9cc;
+    --vidro: rgba(184, 125, 17, 0.05);
+    --sombra: rgba(247, 231, 20, 0.3);
 }
+
 
 body{
     background-color: var(--escuro);
@@ -26,7 +28,7 @@ body{
 .navegacao{
     position: fixed; /*fixa a barra de navegação no topo da página*/
     top: 0;
-    background-color: rgba(15, 24, 42, 0.8);
+    background-color: rgba(155, 123, 34, 0.8);
     width: 100%;
     z-index: 100; /*garante que a barra de navegação fique acima de outros elementos*/
     padding: 1.5rem ; /*adiciona espaçamento interno*/
@@ -55,7 +57,7 @@ body{
     height: 2px; /*define a altura do pseudo-elemento*/
     bottom: 0; /*posiciona o pseudo-elemento na parte inferior do link*/
     left: 0; /*alinha o pseudo-elemento à esquerda do link*/
-    background: linear-gradient(90deg, var(--primaria), var(--secundaria)); /*define a cor de fundo do pseudo-elemento*/
+    background: #f4d03f; /*define a cor de fundo do pseudo-elemento*/
     transition: width 0.5s ease; /*adiciona uma transição suave para a expansão da largura*/
 }
 
@@ -74,7 +76,7 @@ body{
 .foto-perfil{
     width: 350px;
     height: 350px;
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); /*adiciona uma sombra ao redor da imagem*/
+    box-shadow: 0 0 20px rgba(247, 231, 20, 0.3); /*adiciona uma sombra ao redor da imagem*/
     border-radius: 50%; /*torna a imagem circular*/
     object-fit: cover; /*cobre todo o espaço da imagem sem distorção*/
     border: 4px solid var(--vidro); /*adiciona uma borda ao redor da imagem*/
@@ -83,15 +85,16 @@ body{
 
 h1{
     font-size: 3rem; /*define o tamanho da fonte do título*/
-    color: var(--primaria);
+    color: #b39a38;
     font-weight: bold; /*define o peso da fonte do título como negrito*/
     margin: 20px; /*adiciona espaçamento acima do título*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /*define a família da fonte do título*/
 
 }
 
 .cabecalho-sub-titulo{
     font-size: 1.2rem; /*define o tamanho da fonte do subtítulo*/
-    color: var(--claro);
+    color: #b39a38;
 }
 
 .sobre{
@@ -100,7 +103,7 @@ h1{
 
 .sobre-titulo{
     font-size: 3rem; /*define o tamanho da fonte do título da seção "Sobre"*/
-    color: var(--claro);
+    color: #b39a38;
     text-align: center; /*centraliza o texto do título*/
 }
 
@@ -117,6 +120,7 @@ h1{
 .sobre-paragrafo{
     text-align: center; /*centraliza o texto do parágrafo*/
     font-size: 1.2rem; /*define o tamanho da fonte do parágrafo*/
+    color: #b39a38;
 }
 
 .projetos{
@@ -126,16 +130,17 @@ h1{
 .projetos-imagem{
     width: 100%;
     height: 400px;
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); /*adiciona uma sombra ao redor da imagem*/
+    box-shadow: 0 0 20px rgba(247, 231, 20, 0.3); /*adiciona uma sombra ao redor da imagem*/
 }
 
 .projetos-titulo{
     text-align: center; /*centraliza o texto do título*/
     font-size: 2.5rem; /*define o tamanho da fonte do título*/
+    color: #b39a38;
 }
 
 .projetos-card:hover{
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); /*adiciona uma sombra ao redor do cartão de projeto ao passar o mouse*/
+    box-shadow: 0 10px 20px rgba(247, 231, 20, 0.3);; /*adiciona uma sombra ao redor do cartão de projeto ao passar o mouse*/
     transform: translateY(10px) scale(1.03); /*move o cartão para baixo e aumenta ligeiramente o tamanho ao passar o mouse*/
 }
 
@@ -165,11 +170,13 @@ h1{
 
 .caixa-texto-projetos{
     padding: 1.5rem; /*adiciona espaçamento interno ao redor do texto do projeto*/
+    color: #b39a38;
 }
 
 .paragrafro-projeto{
-    color: rgba(226, 232, 240, 0.8); /*define a cor do texto do parágrafo do projeto*/
+    color: rgba(194, 191, 11, 0.548); /*define a cor do texto do parágrafo do projeto*/
     line-height: 1.25rem;
+
 }
 
 .contatos{
@@ -180,6 +187,7 @@ h1{
     text-align: center; /*centraliza o texto do título*/
     font-size: 2.5rem; /*define o tamanho da fonte do título*/
     margin-bottom: 50px; /*adiciona espaçamento abaixo do título*/
+    color: #b39a38;
 }
 
 .formulario-contato{
@@ -216,7 +224,7 @@ h1{
 .botao-form{
     color: var(--claro); /*define a cor do texto do botão*/
     padding: 1rem 2rem; /*adiciona espaçamento interno ao redor do botão*/
-    background: linear-gradient(90deg, var(--primaria), var(--secundaria)); /*define um gradiente de fundo para o botão*/
+    background: #7d6608;
     border: none; /*remove a borda padrão do botão*/
     border-radius: 8px; /*arredonda os cantos do botão*/
     cursor: pointer; /*muda o cursor para indicar que o botão é clicável*/
@@ -227,22 +235,25 @@ h1{
 
 .botao-form:hover{
     transform: translateY(-4px); /*move o botão para cima ao passar o mouse*/
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4); /*adiciona uma sombra ao redor do botão ao passar o mouse*/
+    box-shadow: 0 10px 20px var(--sombra) ; /*adiciona uma sombra ao redor do botão ao passar o mouse*/
 }
 
-.particulas{
-    position: fixed; /*fixa as partículas na tela*/
+/*
+ .particulas{
+    position: fixed; /*fixa as partículas na tela
     top: 0;
     left: 0;
-    width: 100%; /*define a largura das partículas como 100% da janela de visualização*/
-    height: 100%; /*define a altura das partículas como 100% da janela de visualização*/
-    z-index: -1; /*coloca as partículas atrás de outros elementos*/
-    opacity: 0.5; /*define a opacidade das partículas*/
+    width: 100%; /*define a largura das partículas como 100% da janela de visualização
+    height: 100%; /*define a altura das partículas como 100% da janela de visualização
+    z-index: -1; /*coloca as partículas atrás de outros elementos
+    opacity: 0.5; /*define a opacidade das partículas
     background: 
-    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), /*define um gradiente radial como fundo das partículas*/
-    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), /*define outro gradiente radial como fundo das partículas*/
-    var(--maisescuro); /*define a cor de fundo das partículas como um tom mais escuro*/
+    radial-gradient(circle at 10% 20%, #d4ac0d 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, #b89407 0%, transparent 20%),
+    var(--maisescuro);
 }
+*/
+ 
 
 @keyframes flutuar {
     0%, 100% {
