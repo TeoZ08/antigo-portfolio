@@ -27,7 +27,7 @@
     </nav>
 
     <main id="inicio" class="cabecalho">
-        <img src="./fotomatteo.jpg" class="foto-perfil" alt="Foto de Matteo" />
+        <img src="./img/fotomatteo.jpg" class="foto-perfil" alt="Foto de Matteo" />
         <h1>Matteo Lima Scotti</h1>
         <p class="cabecalho-sub-titulo">Estudante de Ciencia Da Computação</p>
     </main>
@@ -36,7 +36,7 @@
         <h2 class="sobre-titulo">Sobre Mim</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">
-            Olá, meu nome é Matteo Lima Scotti, tenho 19 anos e sou estudante de Ciência da Computação. 
+            Olá, meu nome é Matteo Lima Scotti, tenho 18 anos e sou estudante de Ciência da Computação. 
             Estou sempre em busca de aprender mais sobre tecnologia e programação.
             </p>
         </div>
@@ -46,7 +46,7 @@
         <h2 class="projetos-titulo">Futuros Projetos</h2>
         <div class="projetos-caixa">
             <div class="projetos-card">
-                <img src="./projeto1.webp" alt="Projeto 1" class="projetos-imagem">
+                <img src="./img/projeto1.webp" alt="Projeto 1" class="projetos-imagem">
                 <div class="caixa-texto-projetos">
                     <h3 class="info-projetos">Calculadora</h3>
                     <p class="paragrafo-projetos">Calculadora Basica em HTML, CSS e JavaScript</p>
@@ -57,20 +57,21 @@
 
     <section id="contatos" class="contatos">
         <h2 class="contatos-titulo">Entre em Contato</h2>
-        <form class="formulario-contato" id="formulario">
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWPP(event)">
 
             <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form">
+                <input type="text" placeholder="Nome" class="campo-form" id="nome">
             </div>
 
             <div class="grupo-form">
-                <textarea class="campo-form" placeholder="Digite sua mensagem"></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
             </div>
 
             <button type="submit" class="botao-form">Enviar whatsapp!</button>
 
         </form>
     </section>
-
   </body>
+
+  <script src="script.js"></script>
 </html>
