@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisescuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);    
+}
+
+body{
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+.navegacao{
+    position: fixed; /*fixa a barra de navegação no topo da página*/
+    top: 0;
+    background-color: rgba(15, 24, 42, 0.8);
+    width: 100%;
+    z-index: 100; /*garante que a barra de navegação fique acima de outros elementos*/
+    padding: 1.5rem ; /*adiciona espaçamento interno*/
+}
+
+.menu{
+    display: flex; /*usa flexbox para alinhar os itens horizontalmente*/
+    justify-content: center; /*centraliza os itens horizontalmente*/
+    list-style: none; /*remove os marcadores da lista*/
+    gap: 3rem; /*adiciona espaçamento entre os itens do menu*/
+}
+
+.menu-link{
+    text-decoration: none; /*remove o sublinhado dos links*/
+    color: var(--claro); /*define a cor do texto dos links*/
+    font-weight: 500; /*define o peso da fonte dos links*/
+    position: relative;
+    padding: 0.5rem 0; /*adiciona espaçamento interno vertical aos links*/
+}
+
+/*after -> antes/ before -> depois*/
+.menu-link::after{
+    content: ''; /*cria um pseudo-elemento vazio*/
+    position: absolute; /*posiciona o pseudo-elemento de forma absoluta em relação ao link*/
+    width: 0; /*define a largura do pseudo-elemento como 100% do link*/
+    height: 2px; /*define a altura do pseudo-elemento*/
+    bottom: 0; /*posiciona o pseudo-elemento na parte inferior do link*/
+    left: 0; /*alinha o pseudo-elemento à esquerda do link*/
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria)); /*define a cor de fundo do pseudo-elemento*/
+    transition: width 0.5s ease; /*adiciona uma transição suave para a expansão da largura*/
+}
+
+.menu-link:hover::after{
+    width: 100%; /*ao passar o mouse, a largura do pseudo-elemento se expande para 100% do link*/
+}
+
+.cabecalho{
+    min-height: 100vh; /*define a altura mínima do cabeçalho como 100% da altura da janela de visualização*/
+    display: flex; /*usa flexbox para alinhar os itens dentro do cabeçalho*/
+    justify-content: center; /*centraliza os itens horizontalmente*/
+    align-items: center; /*centraliza os itens verticalmente*/
+    flex-direction: column; /*alinha os itens em uma coluna --- Se eu quisesse em linha, usaria ROW*/ 
+}
+
+.foto-perfil{
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); /*adiciona uma sombra ao redor da imagem*/
+    border-radius: 50%; /*torna a imagem circular*/
+    object-fit: cover; /*cobre todo o espaço da imagem sem distorção*/
+    border: 4px solid var(--vidro); /*adiciona uma borda ao redor da imagem*/
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+h1{
+    font-size: 3rem; /*define o tamanho da fonte do título*/
+    color: var(--primaria);
+    font-weight: bold; /*define o peso da fonte do título como negrito*/
+    margin: 20px; /*adiciona espaçamento acima do título*/
+
+}
+
+.cabecalho-sub-titulo{
+    font-size: 1.2rem; /*define o tamanho da fonte do subtítulo*/
+    color: var(--claro);
+}
+
+.sobre{
+    padding: 6rem 2rem; /*adiciona espaçamento interno ao redor da seção "Sobre"*/
+}
+
+.sobre-titulo{
+    font-size: 3rem; /*define o tamanho da fonte do título da seção "Sobre"*/
+    color: var(--claro);
+    text-align: center; /*centraliza o texto do título*/
+}
+
+.sobre-caixa{
+    padding: 2rem;
+    max-width: 800px; /*define a largura máxima da caixa de texto*/
+    margin: 0 auto; /*centraliza a caixa de texto horizontalmente*/
+    border-radius: 16px; /*arredonda os cantos da caixa de texto*/
+    border: 1px solid var(--vidro); /*adiciona uma borda ao redor da caixa de texto*/
+    backdrop-filter: blur(10px); /*aplica um efeito de desfoque ao fundo da caixa de texto*/
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-paragrafo{
+    text-align: center; /*centraliza o texto do parágrafo*/
+    font-size: 1.2rem; /*define o tamanho da fonte do parágrafo*/
+}
+
+.projetos{
+    padding: 6rem 2rem; /*adiciona espaçamento interno ao redor da seção "Projetos"*/
+}
+
+.projetos-imagem{
+    width: 100%;
+    height: 400px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); /*adiciona uma sombra ao redor da imagem*/
+}
+
+.projetos-titulo{
+    text-align: center; /*centraliza o texto do título*/
+    font-size: 2.5rem; /*define o tamanho da fonte do título*/
+}
+
+.projetos-card:hover{
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); /*adiciona uma sombra ao redor do cartão de projeto ao passar o mouse*/
+    transform: translateY(10px) scale(1.03); /*move o cartão para baixo e aumenta ligeiramente o tamanho ao passar o mouse*/
+}
+
+.projetos-caixa{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*cria um layout de grade responsivo com colunas de tamanho mínimo de 300px*/
+    max-width: 1000px; /*define a largura máxima da caixa de projetos*/
+    object-fit: cover;
+    margin: 0 auto; /*centraliza a caixa de projetos horizontalmente*/
+    gap: 2rem; /*adiciona espaçamento entre os itens da grade*/
+    padding: 2rem; /*adiciona espaçamento interno ao redor da caixa de projetos*/
+}
+
+.projetos-card{
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px; /*arredonda os cantos do cartão de projeto*/
+    backdrop-filter: blur(5px); /*aplica um efeito de desfoque ao fundo do cartão de projeto*/
+    border: 1px solid var(--vidro); /*adiciona uma borda ao redor do cartão de projeto*/
+    overflow: hidden;
+    transition: all 0.3s ease; /*adiciona uma transição suave para o efeito de hover*/
+    cursor: pointer; /*muda o cursor para indicar que o cartão é clicável*/
+}
+
+.info-projeto{
+    margin-bottom: 5px;
+}
+
+.caixa-texto-projetos{
+    padding: 1.5rem; /*adiciona espaçamento interno ao redor do texto do projeto*/
+}
+
+.paragrafro-projeto{
+    color: rgba(226, 232, 240, 0.8); /*define a cor do texto do parágrafo do projeto*/
+    line-height: 1.25rem;
+}
+
+.contatos{
+    padding: 6rem 2rem; /*adiciona espaçamento interno ao redor da seção "Contato"*/
+}
+
+.contatos-titulo{
+    text-align: center; /*centraliza o texto do título*/
+    font-size: 2.5rem; /*define o tamanho da fonte do título*/
+    margin-bottom: 50px; /*adiciona espaçamento abaixo do título*/
+}
+
+.formulario-contato{
+    max-width: 600px; /*define a largura máxima do formulário de contato*/
+    margin: 0 auto; /*centraliza o formulário horizontalmente*/
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px); /*aplica um efeito de desfoque ao fundo do formulário*/
+    padding: 2rem; /*adiciona espaçamento interno ao redor do formulário*/
+    border-radius: 16px; /*arredonda os cantos do formulário*/
+    border: 1px solid var(--vidro); /*adiciona uma borda ao redor do formulário*/
+}
+
+
+
+.campo-form{
+    width: 100%; /*define a largura do campo de formulário como 100% do contêiner pai*/
+    padding: 1rem; /*adiciona espaçamento interno ao redor do campo de formulário*/
+    border-radius: 8px; /*arredonda os cantos do campo de formulário*/
+    border: 1px solid var(--vidro); /*adiciona uma borda ao redor do campo de formulário*/
+    color: var(--claro); /*define a cor do texto do campo de formulário*/
+    background: rgba(255, 255, 255, 0.05); /*define o fundo do campo de formulário com um efeito de vidro*/
+    outline: none; /*remove o contorno padrão do campo de formulário*/
+}
+
+.campo-form:focus{
+    border-color: var(--secundaria); /*altera a cor da borda do campo de formulário ao receber foco*/
+    box-shadow: 0 0 10px var(--escuro); /*adiciona uma sombra ao redor do campo de formulário ao receber foco*/
+}
+
+.grupo-form{
+    margin-bottom: 1.5rem; /*adiciona espaçamento abaixo do grupo de campos do formulário*/
+}
+
+.botao-form{
+    color: var(--claro); /*define a cor do texto do botão*/
+    padding: 1rem 2rem; /*adiciona espaçamento interno ao redor do botão*/
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria)); /*define um gradiente de fundo para o botão*/
+    border: none; /*remove a borda padrão do botão*/
+    border-radius: 8px; /*arredonda os cantos do botão*/
+    cursor: pointer; /*muda o cursor para indicar que o botão é clicável*/
+    font-weight: bold; /*define o peso da fonte do botão como negrito*/
+    width: 100%; /*define a largura do botão como 100% do contêiner pai*/
+    transition: all 0.3s ease; /*adiciona uma transição suave para o efeito de hover*/
+}
+
+.botao-form:hover{
+    transform: translateY(-4px); /*move o botão para cima ao passar o mouse*/
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4); /*adiciona uma sombra ao redor do botão ao passar o mouse*/
+}
+
+.particulas{
+    position: fixed; /*fixa as partículas na tela*/
+    top: 0;
+    left: 0;
+    width: 100%; /*define a largura das partículas como 100% da janela de visualização*/
+    height: 100%; /*define a altura das partículas como 100% da janela de visualização*/
+    z-index: -1; /*coloca as partículas atrás de outros elementos*/
+    opacity: 0.5; /*define a opacidade das partículas*/
+    background: 
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), /*define um gradiente radial como fundo das partículas*/
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), /*define outro gradiente radial como fundo das partículas*/
+    var(--maisescuro); /*define a cor de fundo das partículas como um tom mais escuro*/
+}
+
+@keyframes flutuar {
+    0%, 100% {
+            transform: translateY(0);
+
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+    
+}
