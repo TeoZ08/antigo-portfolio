@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 0;
+    vertical-align: baseline;
 }
 
 html{
@@ -81,6 +83,8 @@ body{
     object-fit: cover; /*cobre todo o espaço da imagem sem distorção*/
     border: 4px solid var(--vidro); /*adiciona uma borda ao redor da imagem*/
     animation: flutuar 5s ease-in-out infinite;
+    z-index: 1; /*garante que a borda animada fique acima de outros elementos*/
+
 }
 
 h1{
@@ -152,6 +156,7 @@ h1{
     margin: 0 auto; /*centraliza a caixa de projetos horizontalmente*/
     gap: 2rem; /*adiciona espaçamento entre os itens da grade*/
     padding: 2rem; /*adiciona espaçamento interno ao redor da caixa de projetos*/
+    border-radius: 20px; /*arredonda os cantos da caixa de projetos*/
 }
 
 .projetos-card{
@@ -162,9 +167,10 @@ h1{
     overflow: hidden;
     transition: all 0.3s ease; /*adiciona uma transição suave para o efeito de hover*/
     cursor: pointer; /*muda o cursor para indicar que o cartão é clicável*/
+    position: relative; /*define o posicionamento relativo para permitir o uso de pseudo-elementos*/
 }
 
-.info-projeto{
+.info-projetos{
     margin-bottom: 5px;
 }
 
@@ -173,7 +179,7 @@ h1{
     color: #b39a38;
 }
 
-.paragrafro-projeto{
+.paragrafro-projetos{
     color: rgba(194, 191, 11, 0.548); /*define a cor do texto do parágrafo do projeto*/
     line-height: 1.25rem;
 
@@ -238,21 +244,6 @@ h1{
     box-shadow: 0 10px 20px var(--sombra) ; /*adiciona uma sombra ao redor do botão ao passar o mouse*/
 }
 
-/*
- .particulas{
-    position: fixed; /*fixa as partículas na tela
-    top: 0;
-    left: 0;
-    width: 100%; /*define a largura das partículas como 100% da janela de visualização
-    height: 100%; /*define a altura das partículas como 100% da janela de visualização
-    z-index: -1; /*coloca as partículas atrás de outros elementos
-    opacity: 0.5; /*define a opacidade das partículas
-    background: 
-    radial-gradient(circle at 10% 20%, #d4ac0d 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, #b89407 0%, transparent 20%),
-    var(--maisescuro);
-}
-*/
  
 
 @keyframes flutuar {
@@ -265,4 +256,76 @@ h1{
         transform: translateY(-20px);
     }
     
+}
+
+.rodape{
+    background-color: rgba(141, 133, 25, 0.336);
+    text-align: center; /*centraliza o texto do rodapé*/
+    position: relative; /*define o posicionamento relativo para permitir o uso de pseudo-elementos*/
+    height: auto; /*define a altura do rodapé*/
+    gap: 20px;
+    padding: 20px; /*adiciona espaçamento interno ao redor do rodapé*/
+    margin-top: 40px;
+    
+}
+
+.rodape-texto{
+    color: #e2d6a7c9; /*define a cor do texto do rodapé*/
+    font-size: 1.5rem; /*define o tamanho da fonte do texto do rodapé*/
+    padding: 1rem; /*adiciona espaçamento interno ao redor do texto do rodapé*/
+}
+
+.redes-sociais{
+    z-index: 1000; /*garante que a lista de redes sociais fique acima de outros elementos*/
+}
+
+.lista-rede-social{
+    display: block;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.item-rede-social{
+    list-style: none; /*remove os marcadores da lista*/
+    display: inline-block; /*exibe os itens da lista como blocos em linha*/
+    margin: 0 25px; /*adiciona espaçamento horizontal entre os itens da lista*/
+
+}
+
+
+
+.icone-rede-social{
+    height: 50px; /*define a altura dos ícones*/
+    width: 50px; /*define a largura dos ícones*/
+    cursor: pointer; /*muda o cursor para indicar que os ícones são clicáveis*/
+    
+}
+
+.icone-rede-social:hover{
+    transform: scale(1.2); /*aumenta o tamanho do ícone ao passar o mouse*/
+    transition: all 0.3s ease; /*adiciona uma transição suave para o efeito de hover*/
+}
+
+
+.icone-rede-social::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.icone-rede-social:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+  border-radius: 50%;
+}
+
+.icone-rede-social:hover {
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+  border-radius: 50%;
 }
