@@ -12,7 +12,6 @@
   .navegacao {
     position: static;
     top: 0;
-    background-color: rgba(155, 123, 34, 0.8);
     width: 100%;
     z-index: 100; /*garante que a barra de navegação fique acima de outros elementos*/
     padding: 1rem; /*adiciona espaçamento interno*/
