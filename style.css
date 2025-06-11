@@ -55,7 +55,8 @@ body {
 .navegacao {
   position: fixed; /*fixa a barra de navegação no topo da página*/
   top: 0;
-  background-color: rgba(0, 0, 0, 0.233);
+  background-color: rgba(0, 0, 0, 0.76);
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.541);
   width: 100%;
   z-index: 100; /*garante que a barra de navegação fique acima de outros elementos*/
   padding: 1.5rem; /*adiciona espaçamento interno*/
@@ -168,7 +169,6 @@ h1 span:nth-child(5) {
   z-index: 1; /*garante que a borda animada fique acima de outros elementos*
 } */
 .conteiner-logo {
-  background: red;
   width: 300px; /*define a largura do contêiner da imagem*/
   height: 300px; /*define a altura do contêiner da imagem*/
   box-shadow: 0 0 20px rgba(100, 190, 241, 0.63); /*adiciona uma sombra ao redor do contêiner*/
@@ -218,57 +218,97 @@ h1 span:nth-child(5) {
   font-size: 1.2rem; /*define o tamanho da fonte do parágrafo*/
 }
 
+.mini-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.seta-esquerda {
+  rotate: -90deg;
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(-5px -1px 3px rgb(106, 149, 206));
+}
+
+.seta-esquerda:hover {
+  transform: translateY(-20px);
+  filter: drop-shadow(-5px -1px 3px rgb(106, 149, 206));
+  transition: all 0.3s linear;
+}
+
+.seta {
+  width: 100%;
+  height: 100%;
+}
+
+.seta-direita {
+  rotate: 90deg;
+  filter: drop-shadow(5px 1px 3px rgb(106, 149, 206));
+  width: 100px;
+  height: 100px;
+}
+
+.seta-direita:hover {
+  transform: translateY(-20px);
+  filter: drop-shadow(5px 1px 3px rgb(106, 149, 206));
+  transition: all 0.3s linear;
+}
+
 .projetos {
-  padding: 6rem 2rem; /*adiciona espaçamento interno ao redor da seção "Projetos"*/
+  padding: 4rem 2rem; /*adiciona espaçamento interno ao redor da seção "Projetos"*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .projetos-imagem {
   width: 100%;
-  height: 400px;
+  height: 70%;
 }
 
 .projetos-titulo {
   text-align: center; /*centraliza o texto do título*/
   font-size: 2.5rem; /*define o tamanho da fonte do título*/
+  margin-bottom: 5rem;
 }
 
 .projetos-card:hover {
-  box-shadow: 0 10px 20px rgba(115, 139, 218, 0.493); /*adiciona uma sombra ao redor do cartão de projeto ao passar o mouse*/
-  transform: translateY(10px) scale(1.03); /*move o cartão para baixo e aumenta ligeiramente o tamanho ao passar o mouse*/
-}
-
-.projetos-caixa {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /*cria um layout de grade responsivo com colunas de tamanho mínimo de 300px*/
-  max-width: 1000px; /*define a largura máxima da caixa de projetos*/
-  object-fit: cover;
-  margin: 0 auto; /*centraliza a caixa de projetos horizontalmente*/
-  gap: 2rem; /*adiciona espaçamento entre os itens da grade*/
-  padding: 2rem; /*adiciona espaçamento interno ao redor da caixa de projetos*/
-  border-radius: 20px; /*arredonda os cantos da caixa de projetos*/
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.63); /*adiciona uma sombra ao redor do cartão de projeto ao passar o mouse*/
+  transform: translateY(10px) scale(1.2); /*move o cartão para baixo e aumenta ligeiramente o tamanho ao passar o mouse*/
 }
 
 .projetos-card {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px; /*arredonda os cantos do cartão de projeto*/
   backdrop-filter: blur(
     5px
   ); /*aplica um efeito de desfoque ao fundo do cartão de projeto*/
-  border: 1px solid var(--vidro); /*adiciona uma borda ao redor do cartão de projeto*/
   overflow: hidden;
   transition: all 0.3s ease; /*adiciona uma transição suave para o efeito de hover*/
   position: relative; /*define o posicionamento relativo para permitir o uso de pseudo-elementos*/
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem;
 }
 
 .info-projetos {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .caixa-texto-projetos {
-  padding: 1.5rem; /*adiciona espaçamento interno ao redor do texto do projeto*/
+  padding: 1rem; /*adiciona espaçamento interno ao redor do texto do projeto*/
+  z-index: 1;
+  height: 10rem;
+  text-align: center;
 }
 
 .paragrafro-projetos {
@@ -309,7 +349,7 @@ h1 span:nth-child(5) {
     0.05
   ); /*define o fundo do campo de formulário com um efeito de vidro*/
   outline: none; /*remove o contorno padrão do campo de formulário*/
-  color: var(--fonte);
+  color: white;
 }
 
 .campo-form:focus {
