@@ -9,10 +9,18 @@
 }
 
 @media (max-width: 768px) {
-  .navegacao {
-    position: static;
-    top: 0;
+  .cabecalho {
+    max-width: 768px;
+  }
+
+  .container-logo {
     width: 100%;
+  }
+
+  .navegacao {
+    position: relative;
+    top: 0;
+    width: 3%;
     z-index: 100; /*garante que a barra de navegação fique acima de outros elementos*/
     padding: 1rem; /*adiciona espaçamento interno*/
   }
@@ -20,16 +28,10 @@
   .menu {
     flex-direction: row;
     overflow-x: auto; /*permite rolagem horizontal se os itens excederem a largura da tela*/
-    white-space: nowrap; /*impede que os itens quebrem para a próxima linha*/
+    white-space: wrap; /*impede que os itens quebrem para a próxima linha*/
     gap: 1rem;
     padding: 0 1rem;
-  }
-
-  .menu-link {
-    font-size: 1rem;
-  }
-  main > h1 {
-    font-size: 2rem;
+    font-size: 0.25rem;
   }
 }
 
@@ -70,6 +72,7 @@ body {
   justify-content: center; /*centraliza os itens horizontalmente*/
   list-style: none; /*remove os marcadores da lista*/
   gap: 3rem; /*adiciona espaçamento entre os itens do menu*/
+  flex-direction: row;
 }
 
 .menu-link {
@@ -106,10 +109,8 @@ body {
 }
 
 .container-logo {
-  width: 300px; /*define a largura do contêiner da imagem*/
-  height: 300px; /*define a altura do contêiner da imagem*/
-  overflow: hidden; /*oculta qualquer conteúdo que exceda os limites do contêiner*/
   width: 100%; /*define a largura do contêiner como 100% do elemento pai*/
+  height: 100%;
   padding: 0; /*remove o preenchimento do contêiner*/
   margin: 0; /*remove a margem do contêiner*/
 }
@@ -123,19 +124,20 @@ span {
     0 4px 0 #8190c4, 0 5px 0 #8190c4, 6px 0 transparent,
     0 7px transparent 0 8px 0 transparent, 0 10px 10px rgba(0, 0, 0.5);
   animation: bounce 0.6s ease-out infinite alternate;
+  animation-delay: 1.4s;
 }
 
 h1 span:nth-child(2) {
-  animation-delay: 0.1s;
+  animation-delay: 1.5s;
 }
 h1 span:nth-child(3) {
-  animation-delay: 0.2s;
+  animation-delay: 1.6s;
 }
 h1 span:nth-child(4) {
-  animation-delay: 0.3s;
+  animation-delay: 1.7s;
 }
 h1 span:nth-child(5) {
-  animation-delay: 0.4s;
+  animation-delay: 1.8s;
 }
 
 @keyframes bounce {
@@ -168,13 +170,6 @@ h1 span:nth-child(5) {
   animation: flutuar 5s ease-in-out infinite;
   z-index: 1; /*garante que a borda animada fique acima de outros elementos*
 } */
-.conteiner-logo {
-  width: 300px; /*define a largura do contêiner da imagem*/
-  height: 300px; /*define a altura do contêiner da imagem*/
-  box-shadow: 0 0 20px rgba(100, 190, 241, 0.63); /*adiciona uma sombra ao redor do contêiner*/
-  border-radius: 50%; /*torna o contêiner circular*/
-  overflow: hidden; /*oculta qualquer conteúdo que exceda os limites do contêiner*/
-}
 
 .apresentacao {
   display: flex;
@@ -399,10 +394,12 @@ h1 span:nth-child(5) {
   gap: 20px;
   padding: 20px; /*adiciona espaçamento interno ao redor do rodapé*/
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .rodape-texto {
-  font-size: 1.5rem; /*define o tamanho da fonte do texto do rodapé*/
+  font-size: 1.3rem; /*define o tamanho da fonte do texto do rodapé*/
   padding: 1rem; /*adiciona espaçamento interno ao redor do texto do rodapé*/
 }
 
@@ -411,9 +408,8 @@ h1 span:nth-child(5) {
 }
 
 .lista-rede-social {
-  display: block;
-  flex-direction: row;
-  gap: 30px;
+  gap: 1rem;
+  padding: 0;
 }
 
 .item-rede-social {
